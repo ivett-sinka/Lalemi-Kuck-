@@ -1,0 +1,288 @@
+/* Hogyan zajlik egy kezelés - Animált komponens CSS */
+
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.step-container {
+    width: 50%;
+    border: 1px solid #D5D5D5;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, #FFF 48.22%);
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    transition: all 0.6s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-container.expanded {
+    width: 100%;
+}
+
+.step-content {
+    text-align: left;
+    transition: all 0.6s ease-in-out;
+}
+
+.step-container.expanded .step-content {
+    text-align: center;
+}
+
+.step-icon {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 20px;
+    background-color: #E8D5EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.step-container.expanded .step-icon {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-container h3 {
+    color: #464648;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+
+.step-description {
+    color: #464648;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+
+.toggle-link {
+    color: #AE7DB2;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+    color: #8E5D92;
+}
+
+.arrow-indicator {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #AE7DB2;
+    transition: transform 0.6s ease-in-out;
+}
+
+.step-container.expanded .arrow-indicator {
+    transform: rotate(90deg);
+}
+
+.detailed-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out, margin-top 0.6s ease-in-out;
+    margin-top: 0;
+}
+
+.step-container.expanded .detailed-content {
+    max-height: 2000px;
+    opacity: 1;
+    margin-top: 40px;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #AE7DB2;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+    line-height: 1;
+}
+
+.step-container.expanded .close-button {
+    display: flex;
+}
+
+.close-button:hover {
+    background: #8E5D92;
+}
+
+.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .three-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .three-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .step-container {
+        width: 100%;
+    }
+
+    .step-description {
+        font-size: 20px;
+    }
+
+    .step-container h3 {
+        font-size: 28px;
+    }
+
+    .booking-button {
+        width: 100%;
+    }
+}
+
+.column {
+    text-align: left;
+}
+
+.column-icon {
+    width: 33px;
+    height: 33px;
+    background-color: #E8D5EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+.column p {
+    color: #464648;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+
+.column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.column li {
+    color: #464648;
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.column li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #AE7DB2;
+    font-weight: bold;
+}
+
+.booking-button {
+    width: 372px;
+    max-width: 100%;
+    height: 54px;
+    border: 1px solid #D8C6F5;
+    background: #F1E8FF;
+    color: #464648;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+}
+
+.booking-button:hover {
+    background: #E5D4F7;
+}
+
+.cancellation-policy {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #FFF;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #D5D5D5;
+}
+
+.policy-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #E8D5EB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.policy-content p:first-child {
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.policy-content p {
+    color: #464648;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.policy-content a {
+    color: #AE7DB2;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.policy-content a:hover {
+    text-decoration: underline;
+}
