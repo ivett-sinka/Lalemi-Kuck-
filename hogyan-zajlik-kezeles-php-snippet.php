@@ -22,8 +22,6 @@
             </a>
         </div>
 
-        <div class="arrow-indicator">↓</div>
-
         <div class="detailed-content">
             <div class="three-columns">
                 <div class="column">
@@ -80,8 +78,6 @@
                 <span class="link-text">Több infó ></span>
             </a>
         </div>
-
-        <div class="arrow-indicator">↓</div>
 
         <div class="detailed-content">
             <div class="three-columns">
@@ -140,8 +136,6 @@
             </a>
         </div>
 
-        <div class="arrow-indicator">↓</div>
-
         <div class="detailed-content">
             <div class="three-columns">
                 <div class="column">
@@ -197,8 +191,6 @@
                 <span class="link-text">Több infó ></span>
             </a>
         </div>
-
-        <div class="arrow-indicator">↓</div>
 
         <div class="detailed-content">
             <div class="three-columns">
