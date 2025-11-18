@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYIK - Gyakori Kérdések - Lalemi Kuckó</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kumbh Sans', sans-serif;
+            background-color: #F5F5F5;
+            padding: 40px 20px;
+        }
+
+        .gyik-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gyik-title {
+            color: #464648;
+            font-family: "Kumbh Sans", sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .faq-item {
+            width: 100%;
+            background: #FFF;
+            border: 1px solid #E5E5E5;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 60px 24px 24px;
+            background: #FFF;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #FAFAFA;
+        }
+
+        .question-icon {
+            color: #AE7DB2;
+            font-size: 20px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .question-text {
+            color: #464648;
+            font-family: "Kumbh Sans", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            flex-grow: 1;
+        }
+
+        .faq-item.active .question-text {
+            font-weight: 700;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .faq-item.active .arrow-icon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 24px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 0 24px 24px 24px;
+        }
+
+        .answer-content {
+            color: #464648;
+            font-family: "Kumbh Sans", sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.6;
+            padding-left: 32px;
+        }
+
+        .answer-content p {
+            margin-bottom: 12px;
+        }
+
+        .answer-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .answer-content strong {
+            font-weight: 700;
+        }
+
+        .answer-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 12px 0;
+        }
+
+        .answer-content li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .answer-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #AE7DB2;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .gyik-title {
+                font-size: 36px;
+            }
+
+            .question-text {
+                font-size: 18px;
+            }
+
+            .answer-content {
+                font-size: 16px;
+                padding-left: 0;
+            }
+
+            .faq-question {
+                padding: 20px 50px 20px 20px;
+            }
+
+            .arrow-icon {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gyik-container">
+        <h1 class="gyik-title">GYIK - GYAKORI KÉRDÉSEK</h1>
+
+        <!-- Kérdés 1 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Mennyi ideig tart egy kezelés?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <p>A legtöbb kezelés 50-80 percig tart, de az első alkalom hosszabb is lehet (70-80 perc), mert időt szánunk a megismerésre és az állapotfelmérésre. Vannak 30 perces rövidebb kezelések is, mint például a Carbon szauna és a Spa méregtelenítés.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kérdés 2 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Van lemondási és fizetési feltétel?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <p>Fizetni utalással és készpénzzel tudsz a kezelés után.</p>
+                    <p>Ha nem tudsz eljönni, lemondhatod a kezelést ingyenesen, de <strong>24 órán belüli lemondás esetén a kezelés 50%-a felszámolásra kerül</strong>, így mások is foglalhatnak a felszabadult időpontra. Nem mellékesleg a bévétel forrásomrtól esek el.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kérdés 3 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Milyen gyakran érdemes járni?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <p>Ez teljesen egyéni. Akut problémák esetén (pl. hátfájás) hetente 1-2 alkalom ajánlott a kezdetben, majd később ritkúlhat. Megelőzés céljából havi 1 alkalom elegendő. Stressz és kiégés esetén érdemess sűrűbben járni (hetente 1 alkalom).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kérdés 4 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Van-e parkolási lehetőség?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <p>placeholder szöveg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kérdés 5 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Mit hozzak magammal első alkalommal?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <ul>
+                        <li>Kényelmes ruhát</li>
+                        <li>Nyitott gondolkodás és kíváncsiság</li>
+                        <li>Ha vannak egészségügyi problémáid, amiket tudnom kell, érdemes előre jelezni</li>
+                    </ul>
+                    <p>Nem kell aggódnod: minden szükséges eszközt (törölköző, takaró, olajok) én biztosítok.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kérdés 6 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Tudok ajándékutalványt vásárolni, meddig érvényes?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <p>Igen! Az ajándékutalványt bármilyen összegre kiállítom, és 1 évig érvényes. Tökéletes ajándék szeretteidnek, születésnapra, névnapra vagy karácsonyra.</p>
+                    <p>Ha Ajándék utalványt vásár</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kérdés 7 -->
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span class="question-icon">?</span>
+                <span class="question-text">Tudok bérletet vásárolni, meddig érvényes?</span>
+                <span class="arrow-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#D5D5D5" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </span>
+            </button>
+            <div class="faq-answer">
+                <div class="answer-content">
+                    <p>Igen!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+
+            // Összes többi FAQ bezárása
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Ha nem volt aktív, akkor kinyitjuk
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
