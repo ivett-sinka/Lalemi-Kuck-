@@ -1,0 +1,344 @@
+<!-- GYIK - Gyakori Kerdesek Accordion | WordPress Gutenberg Custom HTML Block -->
+<!-- Masold be ezt az egesz kodot egyetlen "Egyeni HTML" blokkba -->
+
+<style>
+.gyik-accordion-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gyik-accordion-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.gyik-accordion-wrapper .gyik-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.gyik-accordion-wrapper .gyik-item {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.gyik-accordion-wrapper .gyik-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.gyik-accordion-wrapper .gyik-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.gyik-accordion-wrapper .gyik-question:focus {
+  outline: 2px solid #a88b7a;
+  outline-offset: -2px;
+}
+
+.gyik-accordion-wrapper .gyik-question-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.gyik-accordion-wrapper .gyik-q-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #999;
+  background: #f5f5f5;
+  border-radius: 50%;
+}
+
+.gyik-accordion-wrapper .gyik-question-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+}
+
+.gyik-accordion-wrapper .gyik-chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  transition: transform 0.3s ease;
+}
+
+.gyik-accordion-wrapper .gyik-chevron svg {
+  width: 18px;
+  height: 18px;
+  stroke: #999;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gyik-accordion-wrapper .gyik-item.active .gyik-chevron {
+  transform: rotate(180deg);
+}
+
+.gyik-accordion-wrapper .gyik-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.gyik-accordion-wrapper .gyik-answer {
+  padding: 0 24px 20px 60px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.gyik-accordion-wrapper .gyik-answer p {
+  margin-bottom: 10px;
+}
+
+.gyik-accordion-wrapper .gyik-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.gyik-accordion-wrapper .gyik-answer ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.gyik-accordion-wrapper .gyik-answer ul li {
+  margin-bottom: 4px;
+}
+
+.gyik-accordion-wrapper .gyik-answer strong {
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .gyik-accordion-wrapper {
+    padding: 24px 12px;
+  }
+
+  .gyik-accordion-wrapper .gyik-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .gyik-accordion-wrapper .gyik-question {
+    padding: 14px 16px;
+  }
+
+  .gyik-accordion-wrapper .gyik-answer {
+    padding: 0 16px 16px 16px;
+  }
+
+  .gyik-accordion-wrapper .gyik-question-text {
+    font-size: 14px;
+  }
+}
+</style>
+
+<div class="gyik-accordion-wrapper">
+
+  <h2 class="gyik-title">GYIK - GYAKORI KÉRDÉSEK</h2>
+
+  <!-- 1. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Mennyi ideig tart egy kezelés?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <p>A legtöbb kezelés 50–80 percig tart, de az első alkalom hosszabb is lehet (70–80 perc), mert időt szánunk a megismerésre és az állapotfelmérésre.</p>
+        <p>Vannak 30 perces rövidebb kezelések is, mint például a Carbon szauna és a Spa méregtelenítés.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Kell-e előre fizetni vagy foglalót adni?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <p>Fizetni utalással és készpénzzel tudsz a kezelés után.</p>
+        <p>Ha nem tudsz eljönni, lemondhatod a kezelést ingyenesen, de <strong>24 órán belüli lemondás esetén a kezelés 50%-a felszámolásra kerül</strong>, így mások is foglalhatnak a felszabadult időpontra. Nem mellesleg a bevételi forrásomtól esek el.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Milyen gyakran érdemes járni?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <p>Ez teljesen egyéni. Akut problémák esetén (pl. hátfájás) hetente 1-2 alkalom ajánlott a kezdetben, majd később ritkulhat.</p>
+        <p>Megelőzés céljából havi 1 alkalom elegendő. Stressz és kiégés esetén érdemes sűrűbben járni (hetente 1 alkalom).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Van-e parkolási lehetőség?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <p>Igen, a közvetlen közelben ingyenes parkolási lehetőség áll rendelkezésre.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Mit hozzak magammal első alkalommal?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <ul>
+          <li>Kényelmes ruházat.</li>
+          <li>Nyitott gondolkodás és kíváncsiság</li>
+          <li>Ha vannak egészségügyi problémáid, amiket tudnom kell, érdemes előre jelezni</li>
+        </ul>
+        <p>Nem kell aggódnod: minden szükséges eszközt (törölköző, takaró, olajok) én biztosítok.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Tudok ajándékutalványt vásárolni, meddig érvényes?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <p>Igen! Az ajándékutalványt bármilyen összegre kiállítom, és 1 évig érvényes. Tökéletes ajándék szeretteidnek születésnapra, névnapra vagy karácsonyra.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. kerdes -->
+  <div class="gyik-item">
+    <button class="gyik-question" aria-expanded="false">
+      <span class="gyik-question-left">
+        <span class="gyik-q-mark">?</span>
+        <span class="gyik-question-text">Van lemondási feltétel?</span>
+      </span>
+      <span class="gyik-chevron">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </span>
+    </button>
+    <div class="gyik-answer-wrapper">
+      <div class="gyik-answer">
+        <p>Ha nem tudsz eljönni, lemondhatod a kezelést ingyenesen, de <strong>24 órán belüli lemondás esetén a kezelés 50%-a felszámolásra kerül</strong>, így mások is foglalhatnak a felszabadult időpontra.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var wrapper = document.querySelector('.gyik-accordion-wrapper');
+  if (!wrapper) return;
+
+  var items = wrapper.querySelectorAll('.gyik-item');
+
+  items.forEach(function(item) {
+    var btn = item.querySelector('.gyik-question');
+    var answerWrapper = item.querySelector('.gyik-answer-wrapper');
+
+    btn.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+
+      /* Osszes bezarasa */
+      items.forEach(function(otherItem) {
+        var otherAnswer = otherItem.querySelector('.gyik-answer-wrapper');
+        var otherBtn = otherItem.querySelector('.gyik-question');
+        otherItem.classList.remove('active');
+        otherAnswer.style.maxHeight = null;
+        otherBtn.setAttribute('aria-expanded', 'false');
+      });
+
+      /* Ha nem volt aktiv, kinyitjuk */
+      if (!isActive) {
+        item.classList.add('active');
+        answerWrapper.style.maxHeight = answerWrapper.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
